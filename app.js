@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const db = require('./db');
 
 app.use(express.static('public'));
 
@@ -31,7 +32,9 @@ app.use((req, res, next) => {
   res.status(404).send(require('./views/not-found'));
 });
 
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
+db.sync().then(() => {
+  const PORT = process.env.PORT || 8080;
+  app.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}`);
+  });
 });
