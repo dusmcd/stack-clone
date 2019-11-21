@@ -1,8 +1,12 @@
 const express = require('express');
 const app = express();
 const db = require('./db');
+const bodyParser = require('body-parser');
+const { User, Question } = require('./db/models');
 
 app.use(express.static('public'));
+app.use(bodyParser.json({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', (req, res, next) => {
   try {
