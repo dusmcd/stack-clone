@@ -3,7 +3,7 @@ const masterTemplate = require('../partials/_master');
 
 const body = html`
   <h2>Ask a public question</h2>
-  <form action="/question/ask" method="POST">
+  <form action="/question/ask" method="POST" id="frm-ask-question">
     <div id="title">
       <label>Title</label>
       <input type="text" name="title" />
