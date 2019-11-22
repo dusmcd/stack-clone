@@ -1,7 +1,12 @@
 const express = require('express');
 const app = express();
+const db = require('./db');
+const bodyParser = require('body-parser');
+const { User, Question } = require('./db/models');
 
 app.use(express.static('public'));
+app.use(bodyParser.json({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', (req, res, next) => {
   try {
@@ -31,7 +36,9 @@ app.use((req, res, next) => {
   res.status(404).send(require('./views/not-found'));
 });
 
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
+db.sync().then(() => {
+  const PORT = process.env.PORT || 8080;
+  app.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}`);
+  });
 });
