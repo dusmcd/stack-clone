@@ -12,6 +12,16 @@ function masterTemplate(body) {
         <title>Document</title>
       </head>
       <body>
+        <header>
+          <section>
+            <a href="/">Home</a>
+          </section>
+          <section>
+            <a href="/question/ask">
+              <button type="button" class="btn-green">Ask a question</button>
+            </a>
+          </section>
+        </header>
         $${body}
         <script
           src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

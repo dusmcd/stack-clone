@@ -2,3 +2,72 @@ body,
 html {
   height: 100%;
 }
+
+body {
+  background-color: #eff0f1;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  padding: 0.8em;
+  font-size: 13px;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-blue {
+  color: white;
+  background-color: #0095ff;
+}
+
+.btn-green {
+  color: white;
+  background-color: green;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.form-group {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.form-group input,
+.form-group textarea {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.form-group input {
+  height: 2.5em;
+  border: 0.5px solid rgb(180, 180, 180);
+  border-radius: 5px;
+}
+
+.form-group textarea {
+  height: 15em;
+  max-height: 15em;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+#frm-ask-question {
+  background-color: white;
+  width: 70%;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#error {
+  color: red;
+}

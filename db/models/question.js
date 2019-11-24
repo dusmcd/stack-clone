@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
 
-const Questions = db.define('questions', {
+const Question = db.define('questions', {
   title: Sequelize.STRING,
-  body: Sequelize.STRING,
+  content: Sequelize.STRING,
 });
 
-module.exports = Questions;
+module.exports = Question;

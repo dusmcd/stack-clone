@@ -2,23 +2,36 @@ const html = require('html-template-tag');
 const masterTemplate = require('../partials/_master');
 
 const body = html`
-  <h2>Ask a public question</h2>
-  <form action="/question/ask" method="POST" id="frm-ask-question">
-    <div id="title">
-      <label>Title</label>
-      <input type="text" name="title" />
-    </div>
-    <div id="body">
-      <label>Body</label>
-      <textarea name="body"></textarea>
-    </div>
-    <div id="tags">
-      <label>Tags</label>
-      <input type="text" name="tags" />
-    </div>
+  <div class="container">
+    <h2>Ask a public question</h2>
+    <form action="/question/ask" method="POST" id="frm-ask-question">
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" name="title" id="title-input" />
+      </div>
+      <div class="form-group">
+        <label>Body</label>
+        <textarea name="content" id="body-input"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Tags</label>
+        <input type="text" name="tags" />
+      </div>
 
-    <button type="submit">Review your question</button>
-  </form>
+      <button type="button" id="ask-review" class="btn-blue">
+        Review your question
+      </button>
+      <button
+        type="submit"
+        id="ask-post"
+        style="display: none;"
+        class="btn-blue"
+      >
+        Publish your question
+      </button>
+    </form>
+    <div id="error"></div>
+  </div>
 `;
 
 module.exports = masterTemplate(body);

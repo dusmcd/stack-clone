@@ -1,11 +1,11 @@
 const User = require('./users');
-const Questions = require('./questions');
+const Question = require('./question');
 const Tags = require('./tags');
 
-User.belongsToMany(Questions, { through: 'UserQuestions' });
-Questions.belongsToMany(User, { through: 'UserQuestions' });
+User.belongsToMany(Question, { through: 'UserQuestions' });
+Question.belongsToMany(User, { through: 'UserQuestions' });
 
-Questions.belongsToMany(Tags, { through: 'QuestionsTags' });
-Tags.belongsToMany(Questions, { through: 'QuestionsTags' });
+Question.belongsToMany(Tags, { through: 'QuestionsTags' });
+Tags.belongsToMany(Question, { through: 'QuestionsTags' });
 
-module.exports = { User, Questions, Tags };
+module.exports = { User, Question, Tags };
