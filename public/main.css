@@ -5,6 +5,7 @@ html {
 
 body {
   background-color: #eff0f1;
+  font-family: Arial, sans-serif;
 }
 
 header {
@@ -17,6 +18,7 @@ button {
   font-size: 13px;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .btn-blue {
